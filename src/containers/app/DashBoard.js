@@ -4,7 +4,7 @@ import './App.css';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
-import DashBoard from './DashBoard'
+import Admin from './Admin'
 
 // Mapping the component's property to Redux's state
 function mapStateToProps(state) {
@@ -38,7 +38,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-class App extends Component {
+class DashBoard extends Component {
 
   abc() {
     console.log("abc")
@@ -48,10 +48,10 @@ class App extends Component {
   render() {
     return (
       <div >
-        App {console.log(this.props.counter)}
+        DashBoard {console.log(this.props.counter)}
         <div>
-          <DashBoard />
-        </div>
+            <Admin/>
+            </div>  
       </div>
     );
   }
@@ -60,4 +60,4 @@ class App extends Component {
 // connect function will wrap component and attached properties
 // from mapStateToProps into App component
 // Update in coutner 4 -- sending mapDispatchToProps in connect
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(DashBoard);
